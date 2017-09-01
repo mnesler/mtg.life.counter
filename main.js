@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import FlatButton from 'material-ui/FlatButton';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 const styles = {
   headline: {
     fontSize: 24,
@@ -20,9 +23,11 @@ export default class App extends React.Component {
     };
   }
   render() {
-    return (<div style={styles.headline}>{this.state.message}</div>)
-
-  }
+    return (
+      <MuiThemeProvider>
+        <FlatButton label="+" />
+        </MuiThemeProvider>
+    )}
 }
 ReactDOM.render(
   <App />,

@@ -2,30 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Counter from './components/counter.js'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MediaQuery from './components/mediaquerydemo.js'
+import MtgButton from './components/mtgButton.js'
+
+const styles ={
+  container: {
+    //minWidth: 414,
+    //minHeight: 736, 
+    borderWidth: 0.5,
+    borderColor: '#d6d7da',
+  }
+}
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      p1: {
-        background: "#F5A9A9",
-        width: 300,
-        fontSize: 40
-      },
-      p2: {
-        background: "#A9F5F2",
-        width: 300,
-        fontSize: 40
-      }
+
     };
   }
   render() {
     return (
       <MuiThemeProvider>
-      <div>
+      <div style={styles.container}>
+     
       <Counter playerData={this.state.p1} />
       <br />
-      <Counter playerData={this.state.p2}/>
+    {/*<Counter playerData={this.state.p2}/>*/}
       </div>
         </MuiThemeProvider>
     )}
